@@ -16,11 +16,6 @@ class Thread extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function tags()
-    {
-        return $this->belongsToMany(Tag::class,'tag_thread');
-    }
-
     public function scopeFilter($filterQuery,ThreadFilters $threadFilters)
     {
         $threadFilters->apply($filterQuery);

@@ -23,12 +23,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="type">Type</label>
-                    <input type="text" class="form-control" name="type" id="" placeholder="Input..."
-                           value="{{$thread->type}}">
-                </div>
-
-                <div class="form-group">
                     <label for="thread">Thread</label>
                     <textarea class="form-control" name="thread" id="" placeholder="Input..."> {{$thread->thread}} </textarea>
                 </div>

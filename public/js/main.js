@@ -3,3 +3,8 @@ function markNotificationAsRead(notificationCount) {
         $.get('/markAsRead');
     }
 }
+
+
+function dropdownD() {
+    $('#dropD').toggle();
+}

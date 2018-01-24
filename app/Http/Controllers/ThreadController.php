@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Tag;
 use App\Thread;
 use App\ThreadFilters;
 use Illuminate\Http\Request;
@@ -52,15 +51,11 @@ class ThreadController extends Controller
 
         $this->validate($request, [
             'subject' => 'required|min:5',
-            'tags'    => 'required',
             'thread'  => 'required|min:10',
-//            'g-recaptcha-response' => 'required|captcha'
         ]);
 
         //store
         $thread = auth()->user()->threads()->create($request->all());
-
-        $thread->tags()->attach($request->tags);
 
         //redirect
         return back()->withMessage('Thread Created!');
@@ -97,15 +92,10 @@ class ThreadController extends Controller
      */
     public function update(Request $request, Thread $thread)
     {
-//        if(auth()->user()->id !== $thread->user_id){
-//            abort(401,"unauthorized");
-//        }
-//
         $this->authorize('update', $thread);
-        //validate
         $this->validate($request, [
             'subject' => 'required|min:10',
-            'type'    => 'required',
+            // 'type'    => 'required',
             'thread'  => 'required|min:20'
         ]);
 
@@ -124,9 +114,6 @@ class ThreadController extends Controller
      */
     public function destroy(Thread $thread)
     {
-//        if(auth()->user()->id !== $thread->user_id){
-//            abort(401,"unauthorized");
-//        }
         $this->authorize('update', $thread);
 
         $thread->delete();

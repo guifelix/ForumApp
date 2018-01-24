@@ -39,10 +39,6 @@
         </div>
         <hr>
 
-        {{--reply to comment--}}
-        <button class="btn btn-xs btn-default" onclick="toggleReply('{{$comment->id}}')">reply</button>
-        <br>
-        {{--//reply form--}}
         <div style="margin-left: 50px" class="reply-form-{{$comment->id}} hidden">
 
             <form action="{{route('replycomment.store',$comment->id)}}" method="post" role="form">
@@ -69,17 +65,5 @@
     @endforeach
     <br><br>
     @include('thread.partials.comment-form')
-
-@endsection
-
-
-@section('js')
-
-    <script>
-        function toggleReply(commentId){
-            $('.reply-form-'+commentId).toggleClass('hidden');
-        }
-
-    </script>
 
 @endsection

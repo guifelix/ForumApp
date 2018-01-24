@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Tag;
+// use App\Tag;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -18,10 +18,10 @@ class AppServiceProvider extends ServiceProvider
     {
          Schema::defaultStringLength(191);
        
-        if (Schema::hasTable('tags')) 
-        {
-             View::share('tags', Tag::all());
-        }
+        // if (Schema::hasTable('tags')) 
+        // {
+             // View::share('tags', Tag::all());
+        // }
     }
 
     /**

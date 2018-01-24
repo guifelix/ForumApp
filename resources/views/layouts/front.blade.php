@@ -8,8 +8,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Webdev forum</title>
-    <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.min.css">
+    <link rel="stylesheet" href="{{asset('css/paper.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/selectize.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
 
     <!-- Scripts -->
@@ -50,11 +50,8 @@
 </div>
 </div>
 
-{{--<script src="https://code.jquery.com/jquery-3.1.1.min.js"--}}
-        {{--integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="--}}
-        {{--crossorigin="anonymous"></script>--}}
-{{--<!-- Latest compiled and minified JS -->--}}
-{{--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}
+<script src="{{asset('js/jquery-3.1.1.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
 <script src="{{asset('js/app.js')}}"></script>
 
